@@ -29,7 +29,7 @@ const HeroHeader = () => {
             />
           </div>
 
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <input
               className="outline-none w-[400px] text-sm"
               type="text"

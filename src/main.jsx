@@ -1,18 +1,18 @@
-import { StrictMode, useState } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App.jsx";
 import CountryInformation from "./components/CountryInformation.jsx";
 import { countryContext } from "./context/context.js";
+import "./index.css";
 
 const Main = () => {
   const [displayDropDown, setdisplayDropDown] = useState("none");
   const [countryName, setcountryName] = useState("hello");
   const [continentName, setcontinentName] = useState("");
-  const [searchCountry, setsearchCountry] = useState("")
-
+  const [searchCountry, setsearchCountry] = useState("");
+  const queryClient = new QueryClient();
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,7 +25,6 @@ const Main = () => {
   ]);
 
   return (
-    // <StrictMode>
     <countryContext.Provider
       value={{
         displayDropDown,
@@ -35,33 +34,16 @@ const Main = () => {
         continentName,
         setcontinentName,
         searchCountry,
-        setsearchCountry
+        setsearchCountry,
       }}
     >
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
       {/* <App/> */}
     </countryContext.Provider>
-    // </StrictMode>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root")); // Get the root element
 root.render(<Main />); // Render the Main component
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "/information",
-//     element: <CountryInformation />,
-//   },
-// ]);
-
-// createRoot(document.getElementById("root")).render(
-//   <StrictMode>
-//     <RouterProvider router={router} />
-//     {/* <App />  */}
-//   </StrictMode>
-// );

@@ -1,6 +1,8 @@
 import React from "react";
 import { useContext } from "react";
 import { countryContext } from "../context/context";
+import { useCountry } from "../lib/api";
+import { useQueryClient } from "@tanstack/react-query";
 
 const HeroHeader = () => {
   const value = useContext(countryContext);
@@ -11,16 +13,6 @@ const HeroHeader = () => {
     } else {
       value.setdisplayDropDown("none");
     }
-  };
-
-  const handleSearchCountry = (e) => {
-    value.setsearchCountry(e.target.value);
-  };
-
-  const handlerequiredCountry = (e) => {
-    // if (e.key === "Enter") {
-    //   value.setsearchCountry("");
-    // }
   };
 
   return (
@@ -37,7 +29,7 @@ const HeroHeader = () => {
             />
           </div>
 
-          <div className="">
+          <form>
             <input
               className="outline-none w-[400px] text-sm"
               type="text"
@@ -46,25 +38,31 @@ const HeroHeader = () => {
               placeholder="Search for a country..."
               style={{ fontFamily: "Nunito Sans" }}
               value={value.searchCountry}
-              onChange={handleSearchCountry}
-              onKeyDown={handlerequiredCountry}
+              onChange={(e) => value.setsearchCountry(e.target.value)}
             />
-          </div>
+          </form>
         </div>
       </div>
 
       {/* Filter Content */}
-      <div className=" w-[200px] mx-[2rem] my-[1rem]  p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-white">
+      <div
+        className=" w-[200px] mx-[2rem] my-[1rem] cursor-pointer p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-white"
+        onClick={displayDropDown}
+      >
         <div className="">
           <p
             className="text-sm rounded-lg"
             style={{ fontFamily: "Nunito Sans" }}
           >
-            Filter by Region
+            {value.continentName
+              ? value.continentName === "default"
+                ? "Filter by region"
+                : value.continentName
+              : "Filter by region"}
           </p>
         </div>
 
-        <div className="cursor-pointer" onClick={displayDropDown}>
+        <div>
           <img src="./assets/arrow.svg" alt="arrow" />
         </div>
       </div>

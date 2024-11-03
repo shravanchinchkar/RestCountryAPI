@@ -1,18 +1,24 @@
 import React from "react";
 import { useContext } from "react";
 import { countryContext } from "../context/context";
+import { useClickAway } from "@uidotdev/usehooks";
 
 const DropDown = () => {
   const value = useContext(countryContext);
   const handleContinent = (e) => {
     let id = e.currentTarget.id;
     value.setcontinentName(id);
-    value.setdisplayDropDown("none")
+    value.setdisplayDropDown("none");
   };
+
+  const ref = useClickAway(() => {
+    value.setdisplayDropDown("none");
+  });
   return (
     <div
       className="absolute w-[200px] z-10 top-[110px] right-[80px] rounded-[5px] bg-white px-[1rem] py-[1rem] shadow-new-boxshawod"
       style={{ fontFamily: "Nunito Sans", display: value.displayDropDown }}
+      ref={ref}
     >
       <ul className="flex flex-col gap-[8px]">
         <li className="cursor-pointer" id="Africa" onClick={handleContinent}>

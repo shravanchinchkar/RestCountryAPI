@@ -18,10 +18,22 @@ const HeroHeader = () => {
   return (
     <div className="flex justify-between mx-[3rem] my-[2rem] ">
       {/* Search Content */}
-      <div className="flex justify-center items-center heroSectionHeader w-[450px] bg-white mx-[2rem] my-[1rem] shadow-new-boxshawod p-[1rem] rounded-[5px]">
+      <div
+        className={
+          value.themeToggle === "off"
+            ? "flex justify-center items-center heroSectionHeader w-[450px] bg-white mx-[2rem] my-[1rem] shadow-new-boxshawod p-[1rem] rounded-[5px]"
+            : "flex justify-center items-center heroSectionHeader w-[450px] bg-[#2b3945] mx-[2rem] my-[1rem] shadow-new-boxshawod p-[1rem] rounded-[5px] text-white"
+        }
+      >
         {/* Search Image and input */}
         <div className="flex justify-between items-center gap-[20px] w-[100%] px-[0.5rem]">
-          <div className="w-[20px] h-[20px] flex justify-center items-center">
+          <div
+            className={
+              value.themeToggle === "off"
+                ? "w-[20px] h-[20px] flex justify-center items-center"
+                : "hidden"
+            }
+          >
             <img
               className="w-[100%] h-[100%]"
               src="./assets/search.svg"
@@ -29,9 +41,27 @@ const HeroHeader = () => {
             />
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()}>
+          <div
+            className={
+              value.themeToggle === "off"
+                ? "hidden"
+                : "w-[20px] h-[20px] flex justify-center items-center"
+            }
+          >
+            <img
+              className="w-[100%] h-[100%]"
+              src="./assets/searchDark.svg"
+              alt="search"
+            />
+          </div>
+
+          <form onSubmit={(e) => e.preventDefault()} className="">
             <input
-              className="outline-none w-[400px] text-sm"
+              className={
+                value.themeToggle === "off"
+                  ? "outline-none w-[400px] text-sm"
+                  : "outline-none w-[400px] text-sm bg-[#2b3945] text-white placeholder:text-white"
+              }
               type="text"
               name=""
               id="countryname"
@@ -46,7 +76,11 @@ const HeroHeader = () => {
 
       {/* Filter Content */}
       <div
-        className=" w-[200px] mx-[2rem] my-[1rem] cursor-pointer p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-white"
+        className={
+          value.themeToggle === "off"
+            ? "w-[200px] mx-[2rem] my-[1rem] cursor-pointer p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-white"
+            : "w-[200px] mx-[2rem] my-[1rem] cursor-pointer p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-[#2b3945] text-white"
+        }
         onClick={displayDropDown}
       >
         <div className="">
@@ -62,8 +96,12 @@ const HeroHeader = () => {
           </p>
         </div>
 
-        <div>
+        <div className={value.themeToggle==="off"?"block":"hidden"}>
           <img src="./assets/arrow.svg" alt="arrow" />
+        </div>
+
+        <div className={value.themeToggle==="off"?"hidden":"block"}>
+          <img src="./assets/arrowDark.svg" alt="arrow" />
         </div>
       </div>
     </div>

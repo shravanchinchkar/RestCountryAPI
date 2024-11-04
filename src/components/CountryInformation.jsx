@@ -5,6 +5,7 @@ import data from "../../public/originalData.json";
 import { countryContext } from "../context/context";
 
 const CountryInformation = () => {
+  const value = useContext(countryContext);
   const [requiredInfo, setrequiredInfo] = useState([]);
 
   const [countryFullName, setcountryFullName] = useState([]); //use to print the fullname of the country from its abbreviation
@@ -79,21 +80,46 @@ const CountryInformation = () => {
     <>
       <Navbar />
       {/* The content div start from here */}
+      {/* mx-[4.5rem] my-[3rem] flex flex-col gap-[3rem] */}
       <div
-        className="mx-[4.5rem] my-[3rem] flex flex-col gap-[3rem]"
+        className={
+          value.themeToggle === "off"
+            ? "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem] h-[91.89vh]"
+            : "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem] bg-[#202c37] text-white h-[91.89vh]"
+        }
         style={{ fontFamily: "Nunito Sans" }}
       >
         {/* Back button */}
         <Link
           to="/"
-          className="mx-[0.5rem] my-[0.5rem] w-[130px] rounded-[5px] px-[1.5rem] py-[0.5rem] shadow-back-button"
+          className={
+            value.themeToggle === "off"
+              ? "mx-[0.5rem] my-[0.5rem] w-[130px] rounded-[5px] px-[1.5rem] py-[0.5rem] shadow-back-button"
+              : "mx-[0.5rem] my-[0.5rem] w-[130px] rounded-[5px] px-[1.5rem] py-[0.5rem] bg-[#2b3945]"
+          }
           onClick={handleBackButton}
         >
           <div className="flex gap-[10px]">
-            <div className="w-[25px] h-[25px]">
+            <div
+              className={
+                value.themeToggle === "off" ? "w-[25px] h-[25px]" : "hidden"
+              }
+            >
               <img
                 className="w-[100%] h-[100%]"
                 src="./assets/back-arrow.svg"
+                alt="back"
+              />
+            </div>
+
+            <div
+              className={
+                value.themeToggle === "off" ? "hidden" : "w-[25px] h-[25px]"
+              }
+            >
+              <img
+                className="w-[100%] h-[100%]"
+                src="./assets/back-arrowDark.svg"
                 alt="back"
               />
             </div>
@@ -128,32 +154,92 @@ const CountryInformation = () => {
                     {/* Left Info */}
 
                     <div className="flex flex-col gap-[5px]">
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Native Name:
                         </span>{" "}
                         {item.nativeName}
                       </div>
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Population:
                         </span>{" "}
                         {item.population.toLocaleString()}
                       </div>
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Region:
                         </span>{" "}
                         {item.region}
                       </div>
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Sub Region:
                         </span>{" "}
                         {item.subregion}
                       </div>
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Capital:
                         </span>{" "}
                         {item.capital}
@@ -162,20 +248,56 @@ const CountryInformation = () => {
 
                     {/* Right Info */}
                     <div className="flex flex-col gap-[5px]">
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Top Level Domain
                         </span>{" "}
                         {item.topLevelDomain}
                       </div>
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Currencies:
                         </span>{" "}
                         {item.currencies[0].code}
                       </div>
-                      <div className="text-[#858585]">
-                        <span className="text-black font-semibold">
+                      <div
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-[#858585]"
+                            : "text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "text-black font-semibold"
+                              : "text-white font-semibold"
+                          }
+                        >
                           Languages:
                         </span>{" "}
                         {item.languages
@@ -197,7 +319,11 @@ const CountryInformation = () => {
                         countryFullName.map((item, index) => {
                           return (
                             <p
-                              className="text-[#858585] font-semibold flex items-center justify-center text-center w-[100px] h-[25px] shadow-back-button border-[2px] rounded-sm"
+                              className={
+                                value.themeToggle === "off"
+                                  ? "text-[#858585] font-semibold flex items-center justify-center text-center w-[100px] h-[25px] shadow-back-button border-[2px] rounded-sm"
+                                  : "text-gray-400 font-semibold flex items-center justify-center text-center w-[100px] h-[25px]  rounded-sm bg-[#2b3945]"
+                              }
                               key={index}
                             >
                               {item}

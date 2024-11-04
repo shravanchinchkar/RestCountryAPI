@@ -16,7 +16,11 @@ const DropDown = () => {
   });
   return (
     <div
-      className="absolute w-[200px] z-10 top-[110px] right-[80px] rounded-[5px] bg-white px-[1rem] py-[1rem] shadow-new-boxshawod"
+      className={
+        value.themeToggle === "off"
+          ? "absolute w-[200px] z-10 top-[110px] right-[80px] rounded-[5px] bg-white px-[1rem] py-[1rem] shadow-new-boxshawod"
+          : "absolute w-[200px] z-10 top-[110px] right-[80px] rounded-[5px] bg-[#2b3945] px-[1rem] py-[1rem] shadow-new-boxshawod text-white"
+      }
       style={{ fontFamily: "Nunito Sans", display: value.displayDropDown }}
       ref={ref}
     >

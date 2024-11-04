@@ -9,8 +9,8 @@ export async function getData(value, contitent) {
   } else if (value) {
     const country = originalData.filter((item) => {
       return (
-        item.name ===
-        value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
+        item.name.startsWith(value.charAt(0).toUpperCase() + value.slice(1).toLowerCase())
+        // value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
       );
     });
 

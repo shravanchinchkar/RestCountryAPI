@@ -34,7 +34,11 @@ const HeroMain = () => {
                 key={item.name}
               >
                 <div
-                  className="w-[250px] h-[330px]"
+                  className={
+                    value.themeToggle === "off"
+                      ? "w-[250px] h-[330px]"
+                      : "w-[250px] h-[330px] bg-[#2b3945] text-white"
+                  }
                   style={{ fontFamily: "Nunito Sans" }}
                   id={item.name}
                   onClick={displayCountryInformation}
@@ -53,18 +57,58 @@ const HeroMain = () => {
                     </div>
 
                     <div>
-                      <p className="text-sm text-[#858585]">
-                        <span className="font-bold text-black">
+                      <p
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-sm text-[#858585]"
+                            : "text-sm text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "font-bold text-black"
+                              : "font-bold text-white"
+                          }
+                        >
                           Population:
                         </span>{" "}
                         {item.population.toLocaleString()}
                       </p>
-                      <p className="text-sm text-[#858585]">
-                        <span className="font-bold text-black">Region:</span>{" "}
+                      <p
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-sm text-[#858585]"
+                            : "text-sm text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "font-bold text-black"
+                              : "font-bold text-white"
+                          }
+                        >
+                          Region:
+                        </span>{" "}
                         {item.region}
                       </p>
-                      <p className="text-sm text-[#858585]">
-                        <span className="font-bold text-black">Capital:</span>{" "}
+                      <p
+                        className={
+                          value.themeToggle === "off"
+                            ? "text-sm text-[#858585]"
+                            : "text-sm text-gray-400"
+                        }
+                      >
+                        <span
+                          className={
+                            value.themeToggle === "off"
+                              ? "font-bold text-black"
+                              : "font-bold text-white"
+                          }
+                        >
+                          Capital:
+                        </span>{" "}
                         {item.capital}
                       </p>
                     </div>
@@ -77,6 +121,7 @@ const HeroMain = () => {
           Array.from({ length: 8 }).map((_, index) => (
             <Skeleton key={index} className="w-[250px] h-[330px]" />
           ))}
+        {countryData && !countryData.length > 0 && <p>No country found</p>}
       </div>
     </>
   );

@@ -12,6 +12,7 @@ const Main = () => {
   const [countryName, setcountryName] = useState("hello");
   const [continentName, setcontinentName] = useState("");
   const [searchCountry, setsearchCountry] = useState("");
+  const [themeToggle, setthemeToggle] = useState("off")
   const queryClient = new QueryClient();
   const router = createBrowserRouter([
     {
@@ -35,6 +36,8 @@ const Main = () => {
         setcontinentName,
         searchCountry,
         setsearchCountry,
+        themeToggle,
+        setthemeToggle
       }}
     >
       <QueryClientProvider client={queryClient}>

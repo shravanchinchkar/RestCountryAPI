@@ -16,44 +16,55 @@ const HeroMain = () => {
 
   return (
     <>
-      <div className="grid gap-y-[5rem] grid-cols-4 mx-[4.5rem] my-[2rem] px-[0.5rem] py-[1rem]">
+      <div className="grid gap-y-[5rem] new-sm-2:grid-cols-1 new-sm:grid-cols-2 new-lg:grid-cols-4 new-sm-2:mx-[2rem] new-lg:mx-[3rem] new-lg:my-[1rem] new-xl:mx-[4.5rem] new-xl:my-[2rem] new-xl:px-[0.5rem] new-sm-2:py-[1rem]">
         {countryData &&
           countryData.map((item, index) => {
-            let justifyClass = "justify-self-start";
+            let justifyClass = "new-lg:justify-self-start";
             if (index % 4 === 1) {
-              justifyClass = "justify-self-center";
+              justifyClass = "new-lg:justify-self-center";
             } else if (index % 4 === 2) {
-              justifyClass = "justify-self-center";
+              justifyClass = "new-lg:justify-self-center";
             } else if (index % 4 === 3) {
-              justifyClass = "justify-self-end";
+              justifyClass = "new-lg:justify-self-end";
+            }
+
+            let justifyselfClass = "new-sm:justify-self-start";
+            if (index % 2 === 1) {
+              justifyselfClass = "new-sm:justify-self-end";
+            } else if (index % 2 === 2) {
+              justifyselfClass = "new-sm:justify-self-start";
+            } else if (index % 2 === 3) {
+              justifyselfClass = "new-sm:justify-self-end";
             }
             return (
               <Link
                 to="/information"
-                className={`shadow-new-boxshawod ${justifyClass} cursor-pointer rounded-lg`}
+                className={`shadow-new-boxshawod  ${justifyselfClass} ${justifyClass} cursor-pointer rounded-lg  new-sm-2:w-max new-sm-2:m-auto new-sm:m-0`}
                 key={item.name}
               >
                 <div
                   className={
                     value.themeToggle === "off"
-                      ? "w-[250px] h-[330px]"
-                      : "w-[250px] h-[330px] bg-[#2b3945] text-white"
+                      ? "new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-2:justify-self-center new-sm:w-[200px] new-sm:h-[280px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px]"
+                      : "new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm:w-[200px] new-sm:h-[280px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px] bg-[#2b3945] text-white"
                   }
                   style={{ fontFamily: "Nunito Sans" }}
                   id={item.name}
                   onClick={displayCountryInformation}
                 >
-                  <div className="w-[250px] h-[165px]">
+                  <div className="new-lg:w-[210px] new-md:h-[170px] new-lg:h-[130px] new-xl:w-[250px]  new-xl:h-[165px]">
                     <img
-                      className="w-[100%] h-[100%]"
-                      src={item.flags.png}
+                      className="w-[100%] h-[100%] object-cover object-left"
+                      src={item.flags.svg}
                       alt="Country_Flag"
                     />
                   </div>
 
                   <div className="p-[1rem] flex flex-col gap-[1rem]">
                     <div>
-                      <p className="font-bold ">{item.name}</p>
+                      <p className="font-bold new-md:text-xl new-lg:text-[16px]">
+                        {item.name}
+                      </p>
                     </div>
 
                     <div>

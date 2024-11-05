@@ -18,8 +18,11 @@ const DropDown = () => {
     <div
       className={
         value.themeToggle === "off"
-          ? "absolute w-[200px] z-10 top-[110px] right-[80px] rounded-[5px] bg-white px-[1rem] py-[1rem] shadow-new-boxshawod"
-          : "absolute w-[200px] z-10 top-[110px] right-[80px] rounded-[5px] bg-[#2b3945] px-[1rem] py-[1rem] shadow-new-boxshawod text-white"
+          ? "absolute new-sm-2:w-[220px] new-sm:w-[200px] z-10 new-sm-2:top-[170px] new-sm-2:left-[25px] new-sm:top-[80px] new-sm:right-[32px]  new-lg:top-[90px] new-lg:right-[48px] new-xl:top-[110px] new-xl:right-[80px] rounded-[5px] bg-white px-[1rem] py-[1rem] shadow-new-boxshawod"
+
+          // bg-[#2b3945]
+
+          : "absolute new-sm-2:w-[220px] new-sm:w-[200px] z-10 new-sm-2:top-[170px] new-sm-2:left-[25px] new-sm:top-[80px] new-sm:right-[32px]  new-lg:top-[90px] new-lg:right-[48px] new-xl:top-[110px] new-xl:right-[80px] rounded-[5px] bg-[#2b3945] px-[1rem] py-[1rem] shadow-new-boxshawod text-white"
       }
       style={{ fontFamily: "Nunito Sans", display: value.displayDropDown }}
       ref={ref}

@@ -84,7 +84,7 @@ const CountryInformation = () => {
       <div
         className={
           value.themeToggle === "off"
-            ? "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem] h-[91.89vh]"
+            ? "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem]"
             : "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem] bg-[#202c37] text-white h-[91.89vh]"
         }
         style={{ fontFamily: "Nunito Sans" }}
@@ -133,7 +133,7 @@ const CountryInformation = () => {
         {/* Country Content div */}
         {requiredInfo.map((item) => {
           return (
-            <div className="flex gap-[10rem]">
+            <div className="flex gap-[10rem]" key={item.name}>
               {/* Country Flag */}
               <div className="w-[500px] h-[400px]">
                 <img

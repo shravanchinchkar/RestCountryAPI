@@ -7,9 +7,15 @@ export default {
   theme: {
     extend: {
       boxShadow:{
-        // "new-boxshawod":"0px 2px 8px 0px rgba(99, 99, 99, 0.2)",
         "new-boxshawod":"0px 4px 12px rgba(0, 0, 0, 0.1)",
         "back-button":"0px 2px 8px 0px rgba(99, 99, 99, 0.2)",
+      },
+      screens:{
+        "new-sm-2":"400px",
+        "new-sm":"600px",
+        "new-md":"800px",
+        "new-lg":"1000px",
+        "new-xl":"1200px"
       }
     },
   },

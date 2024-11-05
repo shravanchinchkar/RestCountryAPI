@@ -15,24 +15,28 @@ const Navbar = () => {
   return (
     <nav
       className={
-        value.themeToggle === "off"
-          ? "navbar pr-[1rem] pl-[1rem] pt-[1.2rem] pb-[1.2rem] flex justify-between outline outline-offset-[1px] outline-[#f1ecec]"
-          : "navbar pr-[1rem] pl-[1rem] pt-[1.2rem] pb-[1.2rem] flex justify-between text-white bg-[#2b3945]"
+        value.themeToggle === "off" 
+          ? "navbar  new-sm-2:p-[1.5rem] new-sm:px-[2.5rem] new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between outline outline-offset-[1px] outline-[#f1ecec]"
+          : "navbar new-sm-2:p-[1.5rem] new-sm:px-[2.5rem]  new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between text-white bg-[#2b3945]"
       }
     >
       <div
-        className="ml-[4rem] font-extrabold text-2xl "
+        className="new-lg:ml-[2rem] new-xl:ml-[4rem] font-extrabold new-lg:text-2xl new-sm:text-xl"
         style={{ fontFamily: "Nunito Sans" }}
       >
         Where in the world?
       </div>
 
       <div
-        className="mr-[4rem] flex w-[120px] justify-between items-center cursor-pointer"
+        className="new-sm-2:gap-[5px] new-md:gap-0 new-lg:mr-[2rem] new-xl:mr-[4rem] flex new-md:w-[110px] new-lg:w-[120px] justify-between items-center cursor-pointer"
         onClick={handleTheme}
       >
         {/*Light Mode and Dark Mode image */}
-        <div className={value.themeToggle==="off"?"w-[25px] h-[25px]":"hidden"}>
+        <div
+          className={
+            value.themeToggle === "off" ? "new-md:w-[20px] new-md:h-[20px] new-lg:w-[25px] new-lg:h-[25px] " : "hidden"
+          }
+        >
           <img
             className="w-[100%] h-[100%]"
             src="./assets/moon.svg"
@@ -42,15 +46,15 @@ const Navbar = () => {
 
         <div
           className={
-            value.themeToggle === "off" ? "hidden" : "w-[25px] h-[25px]"
+            value.themeToggle === "off" ? "hidden" : "new-md:w-[20px] new-md:h-[20px] new-lg:w-[25px] new-lg:h-[25px]"
           }
         >
           <img className="w-[100%] h-[100%]" src="./assets/sun.svg" alt="sun" />
         </div>
 
-        <div>
-          <p style={{ fontFamily: "Nunito Sans" }} className="font-semibold">
-            {value.themeToggle==="off"?"Dark Mode":"Light Mode"}
+        <div >
+          <p style={{ fontFamily: "Nunito Sans" }} className="new-md:text-[15px] new-lg:text-[17px] font-semibold">
+            {value.themeToggle === "off" ? "Dark Mode" : "Light Mode"}
           </p>
         </div>
       </div>

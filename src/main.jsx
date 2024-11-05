@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
@@ -24,6 +24,22 @@ const Main = () => {
       element: <CountryInformation />,
     },
   ]);
+
+  useEffect(() => {
+    let prevTheme=localStorage.getItem("theme");
+    if(prevTheme===undefined){
+      setthemeToggle(themeToggle)
+    }
+    else{
+      let previousTheme=JSON.parse(prevTheme)
+      setthemeToggle(previousTheme)
+    }
+  }, [])
+  
+  useEffect(() => {
+    localStorage.setItem("theme",JSON.stringify(themeToggle))
+  }, [themeToggle])
+  
 
   return (
     <countryContext.Provider

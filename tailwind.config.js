@@ -11,6 +11,8 @@ export default {
         "back-button":"0px 2px 8px 0px rgba(99, 99, 99, 0.2)",
       },
       screens:{
+        "new-sm-4":"200px",
+        "new-sm-3":"300px",
         "new-sm-2":"400px",
         "new-sm":"600px",
         "new-md":"800px",

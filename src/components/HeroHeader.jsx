@@ -16,22 +16,23 @@ const HeroHeader = () => {
   };
 
   return (
-    <div className="flex new-sm-2:flex-col new-sm-2:items-center new-sm:flex-row justify-between new-lg:mx-[1rem] new-lg:my-[0.5rem] new-xl:mx-[3rem] new-xl:my-[2rem]">
-      {/* Search Content */}
+    <div className="flex new-sm-3:flex-col  new-sm:justify-between new-sm-3:items-start new-sm-2:items-start new-sm:flex-row  new-lg:mx-[1rem] new-lg:my-[0.5rem] new-xl:mx-[3rem] new-xl:my-[2rem]">
+      {/* Search Content */} 
       <div
         className={
           value.themeToggle === "off"
-            ? "flex justify-center items-center heroSectionHeader new-sm-2:w-[370px]  new-sm:w-[250px] new-md:w-[300px] new-lg:w-[450px] bg-white mx-[2rem] my-[1rem] shadow-new-boxshawod new-md:p-[0.2rem] new-lg:p-[1rem] rounded-[5px] "
+            ? "flex justify-center items-center heroSectionHeader new-sm-3:w-[280px] new-sm-2:w-[350px]  new-sm:w-[290px] new-md:w-[320px] new-lg:w-[350px] bg-white  new-sm-3:m-[1rem] new-sm:mx-[2rem] new-sm:my-[1rem] shadow-new-boxshawod new-sm:px-[1rem] new-sm:py-[0.5rem]  new-lg:p-[0.8rem] rounded-[5px] "
+
             // bg-[#2b3945]
-            : "flex justify-center items-center heroSectionHeader new-sm-2:w-[370px]  new-sm:w-[250px] new-md:w-[300px] new-lg:w-[450px] bg-[#2b3945] mx-[2rem] my-[1rem] shadow-new-boxshawod new-md:p-[0.2rem] new-lg:p-[1rem] rounded-[5px] "
+            : "flex justify-center items-center heroSectionHeader new-sm-3:w-[280px] new-sm-2:w-[350px]  new-sm:w-[290px] new-md:w-[320px] new-lg:w-[350px] new-sm-3:m-[1rem] new-sm:mx-[2rem] new-sm:my-[1rem] shadow-new-boxshawod new-sm:px-[1rem] new-sm:py-[0.5rem]  new-lg:p-[0.8rem] rounded-[5px] bg-[#2b3945] text-white"
         }
       >
         {/* Search Image and input */}
-        <div className="flex justify-between items-center gap-[20px] w-[100%] new-sm-2:px-[1.5rem] new-sm-2:py-[1rem] new-sm:py-0  new-sm:px-[0.5rem] ">
+        <div className="flex justify-between items-center gap-[20px] w-[100%] new-sm-3:px-[1.5rem]  new-sm-3:py-[0.5rem] new-sm-2:py-[1rem] new-sm:py-0 ">
           <div
             className={
               value.themeToggle === "off"
-                ? "new-sm:w-[40px] new-sm:h-[40px] new-md:w-[30px] new-md:h-[30px] new-lg:w-[20px]  new-lg:h-[20px] flex justify-center items-center new-sm:ml-[1rem] new-md:ml-0"
+                ? "new-sm-3:w-[40px] new-sm-3:h-[40px] new-lg:w-[20px] new-lg:h-[20px] new-xl:w-[30px] new-xl:h-[30px] flex justify-center items-center new-md:ml-0"
                 : "hidden"
             }
           >
@@ -46,7 +47,7 @@ const HeroHeader = () => {
             className={
               value.themeToggle === "off"
                 ? "hidden"
-                : "new-sm:w-[40px] new-sm:h-[40px] new-md:w-[30px] new-md:h-[30px] new-lg:w-[20px]  new-lg:h-[20px] flex justify-center items-center new-sm:ml-[1rem] new-md:ml-0"
+                : "new-sm-3:w-[30px] new-sm-3:h-[30px] new-md:w-[30px] new-md:h-[30px] new-lg:w-[20px] new-lg:h-[20px] new-xl:w-[30px] new-xl:h-[30px] flex justify-center items-center new-md:ml-0"
             }
           >
             <img
@@ -76,14 +77,14 @@ const HeroHeader = () => {
       </div>
 
       {/* Filter Content */}
-      <div className="new-sm-2:flex new-sm-2:justify-start new-sm-2:items-center  new-sm-2:w-[380px] new-sm:w-max">
+      <div className="new-sm-3:flex  new-sm-3:items-center new-sm-3:w-[300px]  new-sm-2:w-[380px] new-sm:w-max">
         <div
           className={
             value.themeToggle === "off"
-              ? "new-sm-2:w-[220px] new-sm:w-[200px] new-sm-2:mx-[7px] new-sm:mx-[2rem] new-xl:mx-[2rem] my-[1rem] cursor-pointer p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-white"
+              ? "new-sm-3:w-[220px] new-sm:w-[200px] new-sm-3:mx-[0.8rem] new-sm-2:mx-[17px] new-sm:mx-[2rem] new-xl:mx-[2rem] my-[1rem] cursor-pointer new-sm-3:p-[0.8rem] new-sm-2:p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-white" 
 
               // bg-[#2b3945]
-              : "new-sm-2:w-[220px] new-sm:w-[200px] new-sm-2:mx-[7px] new-sm:mx-[2rem] new-xl:mx-[2rem] my-[1rem] cursor-pointer p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-[#2b3945] text-white"
+              : "new-sm-3:w-[220px] new-sm:w-[200px] new-sm-3:mx-[0.8rem] new-sm-2:mx-[17px] new-sm:mx-[2rem] new-xl:mx-[2rem] my-[1rem] cursor-pointer new-sm-3:p-[0.8rem] new-sm-2:p-[1rem] flex justify-between items-center rounded-[5px] shadow-new-boxshawod bg-[#2b3945] text-white"
           }
           onClick={displayDropDown}
         >

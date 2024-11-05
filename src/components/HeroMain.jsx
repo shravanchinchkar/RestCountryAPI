@@ -16,7 +16,7 @@ const HeroMain = () => {
 
   return (
     <>
-      <div className="grid gap-y-[5rem] new-sm-2:grid-cols-1 new-sm:grid-cols-2 new-lg:grid-cols-4 new-sm-2:mx-[2rem] new-lg:mx-[3rem] new-lg:my-[1rem] new-xl:mx-[4.5rem] new-xl:my-[2rem] new-xl:px-[0.5rem] new-sm-2:py-[1rem]">
+      <div className="grid gap-y-[5rem] new-sm-3:grid-cols-1 new-sm:grid-cols-2 new-lg:grid-cols-4 new-sm:mx-[2rem] new-sm:my-[1rem] new-lg:mx-[3rem] new-lg:my-[1rem] new-xl:mx-[4.5rem] new-xl:my-[2rem] new-xl:px-[0.5rem] new-sm-3:py-[1rem]">
         {countryData &&
           countryData.map((item, index) => {
             let justifyClass = "new-lg:justify-self-start";
@@ -39,14 +39,15 @@ const HeroMain = () => {
             return (
               <Link
                 to="/information"
-                className={`shadow-new-boxshawod  ${justifyselfClass} ${justifyClass} cursor-pointer rounded-lg  new-sm-2:w-max new-sm-2:m-auto new-sm:m-0`}
+                className={`shadow-new-boxshawod  ${justifyselfClass} ${justifyClass} cursor-pointer rounded-lg  new-sm-3:w-max new-sm-3:m-auto new-sm:m-0`}
                 key={item.name}
               >
                 <div
                   className={
                     value.themeToggle === "off"
-                      ? "new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-2:justify-self-center new-sm:w-[200px] new-sm:h-[280px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px]"
-                      : "new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm:w-[200px] new-sm:h-[280px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px] bg-[#2b3945] text-white"
+                      ? "new-sm-3:w-[250px] new-sm-3:h-[320px] new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-3:justify-self-center new-sm:w-[250px] new-sm:h-[328px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px]"
+
+                      : "new-sm-3:w-[250px] new-sm-3:h-[320px] new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-3:justify-self-center new-sm:w-[250px] new-sm:h-[328px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px] bg-[#2b3945] text-white"
                   }
                   style={{ fontFamily: "Nunito Sans" }}
                   id={item.name}

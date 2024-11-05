@@ -16,19 +16,19 @@ const Navbar = () => {
     <nav
       className={
         value.themeToggle === "off" 
-          ? "navbar new-sm-4:p-[0.5rem]  new-sm-3:p-[1.5rem] new-sm:px-[2.5rem] new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between outline outline-offset-[1px] outline-[#f1ecec] border-[2px] border-red-500"
-          : "navbar new-sm-3:p-[1.5rem] new-sm:px-[2.5rem]  new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between text-white bg-[#2b3945]"
+          ? "navbar new-sm-4:p-[0.5rem]  new-sm-3:p-[1.5rem] new-sm:px-[2.5rem] new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between outline outline-offset-[1px] outline-[#f1ecec]"
+          : "navbar new-sm-4:p-[0.5rem]  new-sm-3:p-[1.5rem] new-sm:px-[2.5rem] new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between bg-[#2b3945] text-white"
       }
     >
       <div
-        className="new-lg:ml-[2rem] new-xl:ml-[4rem] font-extrabold new-lg:text-2xl new-sm-2:text-xl new-sm-3:text-sm new-sm-4:text-[10px] border-[2px]"
+        className="new-lg:ml-[2rem] new-xl:ml-[4rem] font-extrabold new-lg:text-2xl new-sm-2:text-xl new-sm-3:text-sm new-sm-4:text-[10px]"
         style={{ fontFamily: "Nunito Sans" }}
       >
         Where in the world?
       </div>
 
       <div
-        className="new-sm-4:gap-[5px] new-md:gap-0 new-lg:mr-[2rem] new-xl:mr-[4rem] flex new-md:w-[110px] new-lg:w-[120px] justify-between items-center cursor-pointer border-[2px]"
+        className="new-sm-4:gap-[5px] new-md:gap-0 new-lg:mr-[2rem] new-xl:mr-[4rem] flex new-md:w-[110px] new-lg:w-[120px] justify-between items-center cursor-pointer"
         onClick={handleTheme}
       >
         {/*Light Mode and Dark Mode image */}

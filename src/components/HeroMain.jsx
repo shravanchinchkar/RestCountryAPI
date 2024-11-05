@@ -16,7 +16,7 @@ const HeroMain = () => {
 
   return (
     <>
-      <div className="grid gap-y-[5rem] new-sm-3:grid-cols-1 new-sm:grid-cols-2 new-lg:grid-cols-4 new-sm:mx-[2rem] new-sm:my-[1rem] new-lg:mx-[3rem] new-lg:my-[1rem] new-xl:mx-[4.5rem] new-xl:my-[2rem] new-xl:px-[0.5rem] new-sm-3:py-[1rem]">
+      <div className="grid new-sm-4:gap-y-[2rem] new-sm-2:gap-y-[5rem] new-sm-4:grid-cols-1 new-sm:grid-cols-2 new-lg:grid-cols-4 new-sm:mx-[2rem] new-sm:my-[1rem] new-lg:mx-[3rem] new-lg:my-[1rem] new-xl:mx-[4.5rem] new-xl:my-[2rem] new-xl:px-[0.5rem] new-sm-4:py-[1rem]">
         {countryData &&
           countryData.map((item, index) => {
             let justifyClass = "new-lg:justify-self-start";
@@ -39,15 +39,15 @@ const HeroMain = () => {
             return (
               <Link
                 to="/information"
-                className={`shadow-new-boxshawod  ${justifyselfClass} ${justifyClass} cursor-pointer rounded-lg  new-sm-3:w-max new-sm-3:m-auto new-sm:m-0`}
+                className={`shadow-new-boxshawod  ${justifyselfClass} ${justifyClass} cursor-pointer rounded-lg  new-sm-4:w-max new-sm-4:m-auto new-sm:m-0`}
                 key={item.name}
               >
                 <div
                   className={
                     value.themeToggle === "off"
-                      ? "new-sm-3:w-[250px] new-sm-3:h-[320px] new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-3:justify-self-center new-sm:w-[250px] new-sm:h-[328px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px]"
+                      ? "new-sm-4:w-[180px] new-sm-4:h-[290px] new-sm-3:w-[250px] new-sm-3:h-[320px] new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-4:justify-self-center new-sm:w-[250px] new-sm:h-[328px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px]"
 
-                      : "new-sm-3:w-[250px] new-sm-3:h-[320px] new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-3:justify-self-center new-sm:w-[250px] new-sm:h-[328px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px] bg-[#2b3945] text-white"
+                      : "new-sm-4:w-[150px] new-sm-4:h-[250px] new-sm-3:w-[250px] new-sm-3:h-[320px] new-sm-2:w-[300px] new-sm-2:h-[350px] new-sm-4:justify-self-center new-sm:w-[250px] new-sm:h-[328px] new-md:w-[280px] new-md:h-[350px] new-lg:w-[210px] new-lg:h-[290px] new-xl:w-[250px]  new-xl:h-[330px] bg-[#2b3945] text-white"
                   }
                   style={{ fontFamily: "Nunito Sans" }}
                   id={item.name}
@@ -63,7 +63,7 @@ const HeroMain = () => {
 
                   <div className="p-[1rem] flex flex-col gap-[1rem]">
                     <div>
-                      <p className="font-bold new-md:text-xl new-lg:text-[16px]">
+                      <p className="font-bold new-sm-4:text-sm new-sm-3:text-xl new-lg:text-[16px]">
                         {item.name}
                       </p>
                     </div>
@@ -72,8 +72,8 @@ const HeroMain = () => {
                       <p
                         className={
                           value.themeToggle === "off"
-                            ? "text-sm text-[#858585]"
-                            : "text-sm text-gray-400"
+                            ? "new-sm-4:text-[13px] new-sm-3:text-sm text-[#858585]"
+                            : "new-sm-4:text-[13px] new-sm-3:text-sm text-gray-400"
                         }
                       >
                         <span
@@ -90,8 +90,8 @@ const HeroMain = () => {
                       <p
                         className={
                           value.themeToggle === "off"
-                            ? "text-sm text-[#858585]"
-                            : "text-sm text-gray-400"
+                            ? "new-sm-4:text-[13px] new-sm-3:text-sm text-[#858585]"
+                            : "new-sm-4:text-[13px] new-sm-3:text-sm text-gray-400"
                         }
                       >
                         <span
@@ -108,8 +108,8 @@ const HeroMain = () => {
                       <p
                         className={
                           value.themeToggle === "off"
-                            ? "text-sm text-[#858585]"
-                            : "text-sm text-gray-400"
+                            ? "new-sm-4:text-[13px] new-sm-3:text-sm text-[#858585]"
+                            : "new-sm-4:text-[13px] new-sm-3:text-sm text-gray-400"
                         }
                       >
                         <span

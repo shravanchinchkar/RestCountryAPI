@@ -17,6 +17,7 @@ const Navbar = () => {
       className={
         value.themeToggle === "off" 
           ? "navbar new-sm-4:p-[0.5rem]  new-sm-3:p-[1.5rem] new-sm:px-[2.5rem] new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between outline outline-offset-[1px] outline-[#f1ecec]"
+          
           : "navbar new-sm-4:p-[0.5rem]  new-sm-3:p-[1.5rem] new-sm:px-[2.5rem] new-lg:px-[1rem] new-sm:py-[1.2rem] flex justify-between bg-[#2b3945] text-white"
       }
     >

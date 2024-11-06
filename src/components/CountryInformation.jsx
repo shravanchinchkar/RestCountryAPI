@@ -81,11 +81,12 @@ const CountryInformation = () => {
       <Navbar />
       {/* The content div start from here */}
       {/* mx-[4.5rem] my-[3rem] flex flex-col gap-[3rem] */}
+      {/* bg-[#202c37] text-white */}
       <div
         className={
           value.themeToggle === "off"
-            ? "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem]"
-            : "px-[4.5rem] py-[3rem] flex flex-col gap-[3rem] bg-[#202c37] text-white h-[91.89vh]"
+            ?  "new-sm-4:p-[1rem] new-sm-1:p-[2rem] new-xl:px-[4.5rem] new-xl:py-[3rem] flex flex-col gap-[3rem]"
+            :  "new-sm-4:p-[1rem] new-sm-1:p-[2rem] new-xl:px-[4.5rem] new-xl:py-[3rem] flex flex-col gap-[3rem] bg-[#202c37] text-white"
         }
         style={{ fontFamily: "Nunito Sans" }}
       >
@@ -133,32 +134,36 @@ const CountryInformation = () => {
         {/* Country Content div */}
         {requiredInfo.map((item) => {
           return (
-            <div className="flex gap-[10rem]" key={item.name}>
+            // new-sm-2:w-[90vw]
+            <div className="flex new-sm-1:items-center new-sm-4:flex-col new-lg:flex-row new-sm-1:gap-0 new-xl:gap-[10rem]  new-sm-3:w-[300px] new-sm-2:w-[350px] new-sm-2-5:w-[450px] new-sm-1:w-auto new-lg:w-[90vw] new-xl:w-auto new-sm-2:m-auto new-lg:m-0 new-xl:m-auto new-sm-3:m-auto" key={item.name}>
+
               {/* Country Flag */}
-              <div className="w-[500px] h-[400px]">
+              <div className="new-sm-3:w-[300px] new-sm-3:h-[200px] new-sm-2:w-[350px] new-sm-2:h-[280px] new-sm-1:w-[600px] new-sm-1:h-[400px] new-sm-2-5:w-[500px] new-lg:w-[600px] new-lg:h-[350px] new-xl:h-auto new-xl:w-[500px]">
                 <img
-                  className="w-[100%] h-[100%]"
+                  className="w-[100%] h-[100%] new-sm-3:object-cover new-xl:object-cover"
                   src={item.flags.svg}
                   alt="country Falg"
                 />
               </div>
 
               {/* Country Information */}
-              <div className=" w-[600px] flex flex-col justify-start gap-[2rem] py-[3rem]">
+              <div className="new-sm-3:w-[300px] new-sm-2:w-[600px] flex flex-col justify-start gap-[2rem] py-[3rem] new-lg:ml-[5em] new-xl:ml-0 ">
+
                 <div className="w-max h-[43px]">
-                  <p className="h-[100%] font-bold text-3xl">{item.name}</p>
+                  <p className="h-[100%] font-bold new-sm-3:text-2xl new-sm-2:text-3xl">{item.name}</p>
                 </div>
 
-                <div className="flex flex-col gap-[4rem]">
-                  <div className="flex justify-between">
-                    {/* Left Info */}
+                <div className="new-sm-3:w-[300px] new-sm-2:w-max new-sm-2-5:w-auto flex flex-col gap-[4rem]">
 
-                    <div className="flex flex-col gap-[5px]">
+                  <div className=" flex new-sm-3:w-max new-sm-2-5:w-[445px] new-sm-1:w-auto new-sm-4:flex-col new-sm-4:gap-[3rem] new-sm-2:gap-[2rem] new-sm-1:gap-0 new-lg:gap-[2rem] new-sm-2-5:flex-row justify-between">
+
+                    {/* Left Info */}
+                    <div className="flex new-sm-3:w-max new-sm-2-5:w-auto flex-col gap-[5px]">
                       <div
                         className={
                           value.themeToggle === "off"
-                            ? "text-[#858585]"
-                            : "text-gray-400"
+                            ? "text-[#858585] "
+                            : "text-gray-400 "
                         }
                       >
                         <span
@@ -247,7 +252,7 @@ const CountryInformation = () => {
                     </div>
 
                     {/* Right Info */}
-                    <div className="flex flex-col gap-[5px]">
+                    <div className="flex new-sm-3:w-max new-sm-2-5:w-auto flex-col gap-[5px]">
                       <div
                         className={
                           value.themeToggle === "off"
@@ -308,13 +313,15 @@ const CountryInformation = () => {
                       </div>
                     </div>
                   </div>
+                  
 
-                  <div className="flex gap-[10px]">
+                  {/* Borders start from here */}
+                  <div className="new-sm-3:w-[300px] new-sm-2:w-max new-sm-2-5:w-auto flex new-sm-4:flex-col new-sm-1:flex-row gap-[10px]">
                     <div className="flex items-center">
                       <p className="font-semibold">Border Countries:</p>
                     </div>
 
-                    <div className="flex flex-wrap gap-[10px] w-[400px] text-[12px] p-[10px]">
+                    <div className="flex flex-wrap gap-[10px] new-sm-3:w-[300px]  new-sm-2:w-[400px] text-[12px] p-[10px]">
                       {countryFullName.length > 0 ? (
                         countryFullName.map((item, index) => {
                           return (
@@ -339,9 +346,11 @@ const CountryInformation = () => {
                   </div>
                 </div>
               </div>
+
             </div>
           );
         })}
+
       </div>
     </>
   );

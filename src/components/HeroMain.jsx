@@ -14,10 +14,14 @@ const HeroMain = () => {
     value.setcountryName(id);
   };
 
+
+  console.log("country dataa",countryData)
+
   return (
     <>
       <div className="grid new-sm-4:gap-y-[2rem] new-sm-2:gap-y-[5rem] new-sm-4:grid-cols-1 new-sm:grid-cols-2 new-lg:grid-cols-4 new-sm:mx-[2rem] new-sm:my-[1rem] new-lg:mx-[3rem] new-lg:my-[1rem] new-xl:mx-[4.5rem] new-xl:my-[2rem] new-xl:px-[0.5rem] new-sm-4:py-[1rem]">
         {countryData &&
+        // [0 1 2 3 4]
           countryData.map((item, index) => {
             let justifyClass = "new-lg:justify-self-start";
             if (index % 4 === 1) {

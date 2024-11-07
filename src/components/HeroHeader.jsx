@@ -15,8 +15,13 @@ const HeroHeader = () => {
     }
   };
 
+  const handleChange=(e)=>{
+    console.log("Search Country:",e.currentTarget.value)
+    value.setsearchCountry(e.target.value)
+  }
+
   return (
-    <div className="flex new-sm-4:flex-col  new-sm:justify-between new-sm-3:items-start new-sm-2:items-start new-sm:flex-row  new-lg:mx-[1rem] new-lg:my-[0.5rem] new-xl:mx-[3rem] new-xl:my-[2rem] ">
+    <div className="flex new-sm-4:flex-col  new-sm:justify-between new-sm-3:items-start new-sm-2:items-start new-sm:flex-row  new-lg:mx-[1rem] new-lg:my-[0.5rem] new-xl:mx-[3rem] new-xl:my-[2rem]">
       {/* Search Content */} 
       <div
         className={
@@ -65,12 +70,12 @@ const HeroHeader = () => {
                   : "outline-none w-[400px] new-sm-4:text-[12px] new-sm:text-[15px] new-lg:text-sm bg-[#2b3945] text-white placeholder:text-white"
               }
               type="text"
-              name=""
               id="countryname"
               placeholder="Search for a country..."
               style={{ fontFamily: "Nunito Sans" }}
               value={value.searchCountry}
               onChange={(e) => value.setsearchCountry(e.target.value)}
+              // onChange={handleChange}
             />
           </form>
         </div>
